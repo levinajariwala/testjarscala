@@ -22,5 +22,10 @@ object Main {
 
     // Show the DataFrame
     df.show()
+    // Define your database
+    val databaseName = "bduk"
+
+    data.write.mode(SaveMode.Overwrite).option("path", s"/warehouse/tablespace/external/hive/$databaseName.db/b11").saveAsTable(s"$databaseName.b11")
+
   }
 }
